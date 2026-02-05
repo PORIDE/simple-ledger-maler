@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useMemo, useRef } from 'react';
+﻿import React, { useState, useMemo } from 'react';
 import {
     FileText,
     Receipt,
@@ -245,7 +245,7 @@ const Select = ({ label, value, onChange, options, className = "" }) => (
 const DashboardView = ({ onCreate }) => (
     <div className="flex flex-col items-center justify-center min-h-screen p-8 max-w-4xl mx-auto w-full text-center">
         <div className="mb-12">
-            <h1 className="text-4xl font-black text-[#2C3E50] mb-4 tracking-tight">
+            <h1 className="text-4xl font-black text-[#6E7F8D] mb-4 tracking-tight">
                 しんぷる帳票
             </h1>
             <p className="text-[#7F8C8D] max-w-lg mx-auto leading-relaxed">
@@ -262,7 +262,7 @@ const DashboardView = ({ onCreate }) => (
                 <div className="w-20 h-20 bg-[#EFF2F9] rounded-full flex items-center justify-center text-[#6E7F8D] mb-6 group-hover:scale-110 transition-transform duration-300">
                     <Receipt size={40} strokeWidth={1.5} />
                 </div>
-                <span className="text-xl font-bold text-[#2C3E50]">請求書を作成</span>
+                <span className="text-xl font-bold text-[#6E7F8D]">請求書を作成</span>
                 <span className="text-sm text-[#9CA3AF] mt-2 font-medium">Invoice</span>
             </button>
 
@@ -273,9 +273,14 @@ const DashboardView = ({ onCreate }) => (
                 <div className="w-20 h-20 bg-[#F3F4F6] rounded-full flex items-center justify-center text-[#6E7F8D] mb-6 group-hover:scale-110 transition-transform duration-300">
                     <FileText size={40} strokeWidth={1.5} />
                 </div>
-                <span className="text-xl font-bold text-[#2C3E50]">見積書を作成</span>
+                <span className="text-xl font-bold text-[#6E7F8D]">見積書を作成</span>
                 <span className="text-sm text-[#9CA3AF] mt-2 font-medium">Estimate</span>
             </button>
+        </div>
+
+        <div className="mt-16 text-sm text-[#6E7F8D] font-medium opacity-80 flex flex-col items-center gap-1">
+            <span>Developed by</span>
+            <span>PORIDE / のりのり</span>
         </div>
     </div>
 );
@@ -294,11 +299,12 @@ const EditorView = ({
     onHome
 }) => {
     // Add Row
-    const addItemRow = () => {
-        if (docItems.length < 6) {
-            setDocItems([...docItems, { id: String(docItems.length + 1), name: '', price: '', qty: '' }]);
-        }
-    };
+    // Add Row (Unused in current fixed-6-row design)
+    // const addItemRow = () => {
+    //     if (docItems.length < 6) {
+    //         setDocItems([...docItems, { id: String(docItems.length + 1), name: '', price: '', qty: '' }]);
+    //     }
+    // };
 
     // Remove Row (Clear data)
     const removeRow = (index) => {
