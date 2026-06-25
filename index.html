@@ -932,25 +932,57 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero-mockup {
-        display: none;
-      }
       .hero {
         padding: 80px 16px 60px;
       }
       
       .hero h1 {
-        font-size: 32px;
+        font-size: 24px;
+        line-height: 1.5;
+      }
+
+      .hero p {
+        font-size: 15px;
       }
 
       .btn {
         width: 100%;
         padding: 16px;
+        font-size: 15px;
+      }
+
+      /* ヒーローモックアップをスマホでも表示（横スクロール対応） */
+      .hero-mockup {
+        margin: 40px auto 0;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .hero-mockup .mockup-body {
+        min-width: 720px;
+      }
+
+      /* 比較テーブル：横スクロール対応で同じ見た目を維持 */
+      .compare-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .compare-table {
+        min-width: 680px;
       }
 
       .compare-table th, .compare-table td {
-        padding: 14px 16px;
-        font-size: 14px;
+        padding: 16px 20px;
+        font-size: 15px;
+        white-space: nowrap;
+      }
+
+      .section-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+        padding: 0 8px;
       }
 
       .flowchart {
@@ -968,12 +1000,67 @@
         padding: 60px 0;
       }
 
+      /* フィーチャーカード */
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .feature-card {
+        padding: 28px;
+      }
+
+      .feature-badge {
+        top: 28px;
+        right: 28px;
+      }
+
+      .feature-title {
+        font-size: 18px;
+        padding-right: 40px;
+      }
+
+      .feature-desc {
+        font-size: 14px;
+      }
+
+      /* おすすめセクション */
       .recommended {
         padding: 40px 20px;
+        border-radius: 16px;
+      }
+
+      .recommended h2 {
+        font-size: 22px;
+        margin-bottom: 32px;
+      }
+
+      .recommended-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .recommended-item {
+        font-size: 14px;
+        padding: 18px;
+      }
+
+      /* CTA */
+      .cta-bottom {
+        padding: 80px 16px;
       }
       
       .cta-bottom h2 {
-        font-size: 28px;
+        font-size: 24px;
+      }
+
+      .cta-bottom p {
+        font-size: 15px;
+      }
+
+      /* コンテナのパディング調整 */
+      .container {
+        padding: 0 16px;
       }
     }
 
@@ -1033,6 +1120,18 @@
     @media (max-width: 768px) {
       .minor-updates-grid {
         grid-template-columns: 1fr;
+      }
+
+      .minor-update-item {
+        padding: 20px;
+      }
+
+      .minor-update-title {
+        font-size: 14px;
+      }
+
+      .minor-update-desc {
+        font-size: 12px;
       }
     }
   </style>
